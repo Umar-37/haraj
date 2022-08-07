@@ -24,20 +24,27 @@
 	}
 </script> -->
 <script>
-	import { GET,POST } from './index.js';
+	// @ts-nocheck
+
+	import About from './about.svelte';
+	import { GET, POST } from './index.js';
+	import Layout from './__layout.svelte';
+	import Card from '$lib/card.svelte';
+	import HarajHeader from '$lib/harajHeader.svelte';
+	import Search from '$lib/search.svelte';
 
 	//import Header from "$lib/header.svelte";
-	export let url=false;
-	export let json={title:undefined};
-	$:console.log(url)
+	export let url = false;
+	export let json;
+	
 	// @ts-ignore
 
-	function dothis(e){
+	function dothis(e) {
 		//console.log(e.target.value);
 	}
 </script>
-
-<h1>Welcome to SvelteKit</h1>
+<!-- 
+<h1>Welcome to SvelteKit</h1
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 <h1 class="text-2xl bg-red-300">s</h1>
 <a href="/about">here</a>
@@ -48,19 +55,20 @@
 	}}>click</button
 >
 
-<form  action="" on:input={dothis}  method="post">
-  <input name="pokemon" type="text" />
-  <button  type="submit" >submit</button>
-</form>
-{#if url}
-<div>{url}</div>
+<form action="" on:input={dothis} method="post">
+	<input name="pokemon" type="text" />
+	<button type="submit">submit</button>
+</form> -->
 
-<div>{json.title}</div>
+<HarajHeader/>
+<Search/>
+{#if json}
+
+<Card {...json} />
 {/if}
-
 
 <style>
 	input {
-    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
-  }
+		@apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+	}
 </style>
