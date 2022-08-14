@@ -1,22 +1,16 @@
-# create-svelte
+# Display deleted posts from haraj website using their api
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[`Haraj`](areers.rcjy.gov.sa/)'s front-end by nature won't show deleted posts, but their api exposes some  information that might be useful for others.
 
-## Creating a project
+You may see that this project doesn't have good quality code since I wasn't intending to publish it to the public and it was only to test [`SvelteKit`](https://kit.svelte.dev/) capability, but I publish it anyway.
+## How to use it
 
-If you're seeing this, you've probably already done this step. Congrats!
+Go to the [demo page](https://haraj-history.netlify.app/) and paste the url for the deleted post.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've cloned this repo install the dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
