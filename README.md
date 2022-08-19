@@ -1,6 +1,6 @@
 # Display deleted posts from haraj website using their api
 
-[`Haraj`](areers.rcjy.gov.sa/)'s front-end by nature won't show deleted posts, but their api exposes some  information that might be useful for others.
+[`Haraj`](https://haraj.com.sa/)'s front-end by nature won't show deleted posts, but their api exposes some  information that might be useful for others.
 
 You may see that this project doesn't have good quality code since I wasn't intending to publish it to the public and it was only to test [`SvelteKit`](https://kit.svelte.dev/) capability, but I publish it anyway.
 ## How to use it

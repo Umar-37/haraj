@@ -27,7 +27,7 @@
 
                     <input type="text" style="direction: ltr;"
                         autocomplete="on" aria-autocomplete="list" aria-controls="react-autowhatever-1"
-                        class="form-control" name="pokemon" placeholder="https://haraj.com.sa/1185583953/" value="">                    </div>
+                        class="form-control" name="post" placeholder="https://haraj.com.sa/1185583953/" value="">                    </div>
             </div>
         </form>
     </div>

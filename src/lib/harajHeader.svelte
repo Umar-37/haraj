@@ -2,7 +2,7 @@
     let archive = 'ارشيف'
     let firstLine = 'ابحث عن الإعلانات المحذوفة'
     let secondLine = 'هذه الخدمة تجريبية وقد لاتعمل بشكل المطلوب'
-
+    export let error=false
 </script>
 <div class="header">
     <nav class="mainNavbar">
@@ -17,6 +17,25 @@
     </nav>
     <noscript></noscript>
 </div>
-<div class="random-help-message post_deleted" style="margin: 15px 10px; ">
+{#if error}
+ <div class="random-help-message post_deleted" style="margin: 15px 10px; color: #f5453b;
+    background: rgba(245, 69, 59, .1);
+    border-color: #f5453b ">
+    <p>{error}</p>
+</div>
+{:else}
+     <!-- else content here -->
+<div class="random-help-message post_deleted" style="margin: 15px 10px;">
     <p>{firstLine}<br>{secondLine}</p>
 </div>
+{/if}
+<style>
+
+.postWrapper .postMain .post_deleted {
+    color: #f5453b;
+    background: rgba(245, 69, 59, .1);
+    border-color: #f5453b
+}
+
+
+</style>

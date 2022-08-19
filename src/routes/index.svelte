@@ -26,9 +26,7 @@
 <script>
 	// @ts-nocheck
 
-	import About from './about.svelte';
-	import { GET, POST } from './index.js';
-	import Layout from './__layout.svelte';
+	import { POST } from './index.js';
 	import Card from '$lib/card.svelte';
 	import HarajHeader from '$lib/harajHeader.svelte';
 	import Search from '$lib/search.svelte';
@@ -36,13 +34,15 @@
 	//import Header from "$lib/header.svelte";
 	export let url = false;
 	export let json;
-	
+	export let error;
+
 	// @ts-ignore
 
 	function dothis(e) {
 		//console.log(e.target.value);
 	}
 </script>
+
 <!-- 
 <h1>Welcome to SvelteKit</h1
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
@@ -56,15 +56,13 @@
 >
 
 <form action="" on:input={dothis} method="post">
-	<input name="pokemon" type="text" />
+	<input name="post" type="text" />
 	<button type="submit">submit</button>
 </form> -->
-
-<HarajHeader/>
-<Search/>
+<HarajHeader {error} />
+<Search />
 {#if json}
-
-<Card {...json} />
+	<Card {...json} />
 {/if}
 
 <style>
