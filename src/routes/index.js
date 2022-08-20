@@ -28,12 +28,18 @@ export async function POST({ request }) {
 			var regExp = /[a-zA-Z]/g;
 			adNumber = urlBreak[3].slice(2)
 
+			if (adNumber.includes('?')) {
+				//https://haraj.com.sa/1199256889?src=ios%E2%81%A9 
+				//from ios device or android
+				adNumber = adNumber.split('?')[0]
+			}
+
 			if (regExp.test(adNumber)) {
 				throw 'contain text'
 			}
 			adNumber = parseInt(adNumber)
 		} catch (e) {
-				error = 'رابط الاعلان غير صحيح'
+			error = 'رابط الاعلان غير صحيح'
 			return {
 				status: 200,
 				body: { error },
@@ -62,8 +68,7 @@ export async function POST({ request }) {
 				location: `/`
 			};
 		} else {
-			console.log('in else', res);
-			error='رابط الاعلان طويل بزياده, شيك عليه نفداك'
+			error = 'رابط الاعلان طويل بزياده, شيك عليه نفداك'
 			return {
 				status: 200,
 				body: { error },
